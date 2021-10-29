@@ -19,15 +19,7 @@ class CartForm extends StatelessWidget {
   List _items= [];
 
   Future<void> readJson() async {
-
-    // final String response = await rootBundle.loadString('assets/sample.json');
-    // await sharedPref.save("user", response);
-    // print(sharedPref);
-    print(products_data);
-
     data = await json.decode(products_data);
-    print(data);
-    print("--------");
       _items = data;
   }
 

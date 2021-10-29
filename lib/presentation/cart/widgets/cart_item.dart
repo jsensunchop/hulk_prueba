@@ -38,9 +38,13 @@ class CartContentItem extends StatelessWidget {
   Future<void> changeStock(int index, int stock) async{
     print(_items[index]["stock"]);
     if(_items[index]["stock"] >= int.parse(_quantityController.text)){
+      print(_items[index]["stock"]);
       _removeItemFromCartCallback(_cartItemState);
+      _items[index]["stock"] = _items[index]["stock"] - stock;
       data1 = await json.encode(_items);
       products_data = data1;
+      print(products_data);
+      // Navigator.pushNamed(context, CartFinished.routeName);
     } else{
       print("no se puede men");
     }
@@ -84,7 +88,7 @@ class CartContentItem extends StatelessWidget {
                   Row(
                     children: [
                       const Text(
-                          "Quantity: ",
+                        "Quantity: ",
                       ),
                       Text(
                         _quantityController.text,
@@ -107,7 +111,7 @@ class CartContentItem extends StatelessWidget {
           text: "Buy",
           press: () async{
             readJson();
-            Navigator.pushNamed(context, CartFinished.routeName);
+
           },
         ),
       )

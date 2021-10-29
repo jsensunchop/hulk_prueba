@@ -5,6 +5,7 @@ import 'package:hulk_store/data/products/products_data.dart';
 import 'package:hulk_store/presentation/cart/cart_state.dart';
 import 'package:hulk_store/presentation/cart/widgets/cart_form.dart';
 import 'package:hulk_store/presentation/widgets/button.dart';
+import 'package:hulk_store/style.dart';
 
 class CartWidget extends StatelessWidget {
   final CartState _cartState;
@@ -20,16 +21,23 @@ class CartWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      elevation: 0,
       child: Column(
         children: <Widget>[
           Container(
+            decoration: BoxDecoration(
+              color: Colors.transparent
+            ),
             height: 110,
             child: DrawerHeader(
+              decoration: BoxDecoration(
+                color: kPrimaryColor
+              ),
                 padding: EdgeInsets.zero,
                 child: ListTile(
                   contentPadding: EdgeInsets.zero,
                   leading: IconButton(
-                    icon: Icon(Icons.arrow_back_ios),
+                    icon: const Icon(Icons.arrow_back_ios, color: Colors.white,),
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
@@ -37,9 +45,12 @@ class CartWidget extends StatelessWidget {
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Icon(Icons.shopping_cart),
+                      Icon(Icons.shopping_cart, color: Colors.white,),
                       Text(
                         'Cart',
+                        style: TextStyle(
+                          color: Colors.white
+                        ),
                       )
                     ],
                   ),
