@@ -93,10 +93,17 @@ class _HomeScreenAdminState extends State<HomeScreenAdmin> {
 
   @override
   Widget build(BuildContext context) {
+    readJson();
     final _product = ModalRoute.of(context).settings.arguments as ProductArguments;
     return Scaffold(
+
       appBar: AppBar(
+        backgroundColor: kPrimaryColor,
         centerTitle: true,
+        leading: SizedBox(),
+        actions:[
+          logout(context),
+        ],
         title: const Text(
           'Admin',
         ),
@@ -142,15 +149,36 @@ class _HomeScreenAdminState extends State<HomeScreenAdmin> {
                 ),
               ),
             )
-                : ElevatedButton(
-                child: const Text('Load Data'),
-                onPressed: readJson,
-            ),
+                : Column(
+                  children: [
+                    Center(
+                      child: ElevatedButton(
+                        child: const Text('Load Data'),
+                        onPressed: readJson,
+                      ),
+                    ),
+                  ],
+                ),
           ],
         ),
       ),
     );
   }
+}
+
+Widget logout(BuildContext context){
+  return Stack(
+    children: [
+      IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.logout,
+            color: Colors.white,
+          ))
+    ],
+  );
 }
 
 class ProductArguments {

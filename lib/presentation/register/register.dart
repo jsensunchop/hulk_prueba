@@ -79,7 +79,7 @@ class Body extends StatelessWidget {
                             GestureDetector(
                               onTap: () {
                                 // Get.to(RegisterPage());
-                                Navigator.pushNamed(context, SignInScreen.routeName);
+                                Navigator.pop(context);
                               },
                               child: const Text(
                                 "Sign In",

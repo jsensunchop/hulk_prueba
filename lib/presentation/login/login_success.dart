@@ -5,6 +5,7 @@ import 'package:hulk_store/presentation/login/login.dart';
 import 'package:hulk_store/presentation/login/login_admin.dart';
 import 'package:hulk_store/presentation/widgets/button.dart';
 import 'package:hulk_store/size_config.dart';
+import 'package:hulk_store/style.dart';
 
 class LoginTypeScreen extends StatelessWidget {
   static String routeName = "/login_type";
@@ -12,7 +13,7 @@ class LoginTypeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Login Success"),
+        backgroundColor: kPrimaryColor,
       ),
       body: Center(child: Body()),
     );

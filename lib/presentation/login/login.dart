@@ -12,8 +12,12 @@ class SignInScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(12, 117, 16, 1),
+      appBar: AppBar(
+        backgroundColor: kPrimaryColor,
+        elevation: 0,
+      ),
       body: Padding(
-        padding: const EdgeInsets.only(top:100.0, left: 50, right: 50),
+        padding: const EdgeInsets.only(top:50.0, left: 50, right: 50),
         child: Body(),
       ),
     );

@@ -12,9 +12,13 @@ class SignInScreenAdmin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(12, 117, 16, 1),
+      backgroundColor: kPrimaryColor,
+      appBar: AppBar(
+        backgroundColor: kPrimaryColor,
+        elevation: 0,
+      ),
       body: Padding(
-        padding: const EdgeInsets.only(top:100.0, left: 50, right: 50),
+        padding: const EdgeInsets.only(top:50.0, left: 50, right: 50),
         child: Body(),
       ),
     );
@@ -43,7 +47,7 @@ class Body extends StatelessWidget {
                 children: [
                   SizedBox(height: MediaQuery.of(context).size.height *0.04),
                   const Text(
-                    "Sing in",
+                    "Admin Sing in",
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 28.0,
@@ -54,45 +58,8 @@ class Body extends StatelessWidget {
                   //   "Sign in with your email and password  \nor continue with social media",
                   //   textAlign: TextAlign.center,
                   // ),
-                  SizedBox(height: MediaQuery.of(context).size.height *0.08),
+                  SizedBox(height: MediaQuery.of(context).size.height *0.10),
                   SignForm(),
-                  SizedBox(height: MediaQuery.of(context).size.height *0.02),
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: Container(
-                        padding: EdgeInsets.only(
-                            top: 20.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            const Text(
-                              "New user?",
-                              style: TextStyle(
-                                fontSize: 16.0,
-
-                              ),
-                            ),
-                            const Padding(
-                              padding: EdgeInsets.only(right: 10.0),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                // Get.to(RegisterPage());
-                                Navigator.pushNamed(context, RegisterScreen.routeName);
-                              },
-                              child: const Text(
-                                "Create an account",
-                                style: TextStyle(
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.bold,
-                                    color: kPrimaryColor
-                                ),
-                              ),
-                            ),
-                          ],
-                        )),
-                  ),
                 ],
               ),
             ),
@@ -140,8 +107,7 @@ class _SignFormState extends State<SignForm> {
           buildEmailFormField(),
           SizedBox(height: MediaQuery.of(context).size.height *0.04),
           buildPasswordFormField(),
-          SizedBox(height: MediaQuery.of(context).size.height *0.04),
-          SizedBox(height: MediaQuery.of(context).size.height *0.02),
+          SizedBox(height: MediaQuery.of(context).size.height *0.10),
           AppButton(
             text: "Sign In",
             press: () {
@@ -177,7 +143,7 @@ class _SignFormState extends State<SignForm> {
         if (value.isEmpty) {
           addError(error: kPassNullError);
           return "";
-        } else if (value.length < 4) {
+        } else if (value != "admin") {
           addError(error: kShortPassError);
           return "";
         }
@@ -210,15 +176,15 @@ class _SignFormState extends State<SignForm> {
         if (value.isEmpty) {
           addError(error: kEmailNullError);
           return "";
-        } else if (!emailValidatorRegExp.hasMatch(value)) {
+        } else if (value != "admin") {
           addError(error: kInvalidEmailError);
           return "";
         }
         return null;
       },
       decoration: const InputDecoration(
-        labelText: "Email",
-        hintText: "Enter your email",
+        labelText: "User",
+        hintText: "Enter your admin user",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
