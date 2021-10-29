@@ -2,8 +2,8 @@ String products_data = '''[
   {
     "id": "1",
     "image":
-    "https://m.media-amazon.com/images/I/81oKhu2bsgL._AC_UL640_FMwebp_QL65_.jpg",
-    "title": "Element Blazin LS tee Shirt, Hombre",
+    "https://github.com/jsensunchop/hulk_prueba/blob/master/assets/images/Grupo%2044/Grupo%2044.png",
+    "title": "Element Blazin LS T-Shirt, Hombre",
     "price": 19.95,
     "stock": 0
   },
@@ -11,7 +11,7 @@ String products_data = '''[
     "id": "2",
     "image":
     "https://m.media-amazon.com/images/I/81HnHYik58L._AC_UL640_FMwebp_QL65_.jpg",
-    "title": "Element Vertical SS tee Shirt, Hombre",
+    "title": "Element Vertical SS T-Shirt, Hombre",
     "price": 21.95,
     "stock": 0
   },

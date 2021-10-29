@@ -79,8 +79,10 @@ class HomeHeader extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: logout(context),
-      backgroundColor: kPrimaryColor,
+      leading: logout(context),
+      centerTitle: true,
+      title: Image.asset("assets/images/Grupo44.png"),
+      backgroundColor: Colors.white,
       actions: <Widget>[
         shoppingCartIcon(context),
 
@@ -97,7 +99,7 @@ class HomeHeader extends StatelessWidget implements PreferredSizeWidget {
             },
             icon: const Icon(
               Icons.logout,
-              color: Colors.white,
+              color: kPrimaryColor,
             ))
       ],
     );
@@ -112,7 +114,7 @@ class HomeHeader extends StatelessWidget implements PreferredSizeWidget {
         IconButton(
           icon: const Icon(
               Icons.shopping_cart,
-              color: Colors.white,
+              color: kPrimaryColor,
           ),
           onPressed: () {
             Scaffold.of(context).openEndDrawer();

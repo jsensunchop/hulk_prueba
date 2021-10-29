@@ -46,8 +46,10 @@ class Body extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(height: MediaQuery.of(context).size.height *0.04),
+                  Image.asset("assets/images/Grupo44.png"),
+                  SizedBox(height: MediaQuery.of(context).size.height *0.04),
                   const Text(
-                    "Admin Sing in",
+                    "Admin Sign in",
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 28.0,
@@ -58,7 +60,7 @@ class Body extends StatelessWidget {
                   //   "Sign in with your email and password  \nor continue with social media",
                   //   textAlign: TextAlign.center,
                   // ),
-                  SizedBox(height: MediaQuery.of(context).size.height *0.10),
+                  SizedBox(height: MediaQuery.of(context).size.height *0.08),
                   SignForm(),
                 ],
               ),
@@ -107,7 +109,7 @@ class _SignFormState extends State<SignForm> {
           buildEmailFormField(),
           SizedBox(height: MediaQuery.of(context).size.height *0.04),
           buildPasswordFormField(),
-          SizedBox(height: MediaQuery.of(context).size.height *0.10),
+          SizedBox(height: MediaQuery.of(context).size.height *0.07),
           AppButton(
             text: "Sign In",
             press: () {
