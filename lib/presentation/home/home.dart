@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hulk_store/data/products/products_data.dart';
 import 'package:hulk_store/dependencies_provider.dart';
 import 'package:hulk_store/presentation/cart/cart_presenter.dart';
 import 'package:hulk_store/presentation/cart/cart_state.dart';
@@ -52,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Color.fromRGBO(12, 117, 16, 1),
+      backgroundColor: Color.fromRGBO(12, 117, 16, 1),
       appBar: HomeHeader(_cartState.totalItems),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hulk_store/presentation/home.dart';
+import 'package:hulk_store/presentation/home/home.dart';
 import 'package:hulk_store/presentation/login/login_success.dart';
 import 'package:hulk_store/presentation/register/register.dart';
 import 'package:hulk_store/presentation/widgets/button.dart';

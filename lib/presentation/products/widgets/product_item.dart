@@ -50,7 +50,7 @@ class ProductItem extends StatelessWidget {
             ],
           ));
 
-    } else{
+    } else {
       return Card(
 
           child: Column(

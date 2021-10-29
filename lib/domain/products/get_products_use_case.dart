@@ -6,7 +6,7 @@ class GetProducts {
 
   GetProducts(this._productRepository);
 
-  Future<List<Product>> execute() {
+  Future<List<dynamic>> execute() {
     return _productRepository.get();
   }
 }

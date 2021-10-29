@@ -32,6 +32,7 @@ dependencies:
   http: ^0.13.3
   intl: ^0.16.1
   get_it: ^3.0.3
+  shared_preferences: any
   flutter:
     sdk: flutter
 

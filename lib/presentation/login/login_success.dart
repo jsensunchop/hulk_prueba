@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hulk_store/presentation/home.dart';
+import 'package:hulk_store/presentation/home/home.dart';
 import 'package:hulk_store/presentation/login/login.dart';
+import 'package:hulk_store/presentation/login/login_admin.dart';
 import 'package:hulk_store/presentation/widgets/button.dart';
 import 'package:hulk_store/size_config.dart';
 
@@ -30,19 +31,20 @@ class Body extends StatelessWidget {
         // ),
         SizedBox(height: MediaQuery.of(context).size.height *0.08),
         const Text(
-          "Login Success",
+          "Please pick up your role",
           style: TextStyle(
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
             color: Colors.black,
           ),
         ),
+        Spacer(),
         SizedBox(
           width:  MediaQuery.of(context).size.width *0.6,
           child: AppButton(
             text: "Admin",
             press: () {
-              Navigator.pushNamed(context, SignInScreen.routeName);
+              Navigator.pushNamed(context, SignInScreenAdmin.routeName);
             },
           ),
         ),

@@ -4,31 +4,31 @@ import 'package:hulk_store/domain/cart/cart.dart';
 import 'package:hulk_store/domain/cart/cartItem.dart';
 import 'package:hulk_store/domain/cart/cart_repository.dart';
 
-const jsonCart = '''[
-  {
-    "id": "1",
-    "image":
-    "https://m.media-amazon.com/images/I/81oKhu2bsgL._AC_UL640_FMwebp_QL65_.jpg",
-    "title": "Element Blazin LS tee Shirt, Hombre",
-    "price": 19.95,
-    "quantity": 3
-  },
-  {
-    "id": "2",
-    "image":
-    "https://m.media-amazon.com/images/I/81HnHYik58L._AC_UL640_FMwebp_QL65_.jpg",
-    "title": "Element Vertical SS tee Shirt, Hombre",
-    "price": 21.95,
-    "quantity": 1
-  }
-  ]''';
+// const jsonCart = '''[
+//   {
+//     "id": "1",
+//     "image":
+//     "https://m.media-amazon.com/images/I/81oKhu2bsgL._AC_UL640_FMwebp_QL65_.jpg",
+//     "title": "Element Blazin LS tee Shirt, Hombre",
+//     "price": 19.95,
+//     "quantity": 3
+//   },
+//   {
+//     "id": "2",
+//     "image":
+//     "https://m.media-amazon.com/images/I/81HnHYik58L._AC_UL640_FMwebp_QL65_.jpg",
+//     "title": "Element Vertical SS tee Shirt, Hombre",
+//     "price": 21.95,
+//     "quantity": 1
+//   }
+//   ]''';
 
 class CartInMemoryRepository implements CartRepository {
   Cart cart = Cart.createEmpty();
 
-  CartInMemoryRepository() {
-    cart = _parse(jsonDecode(jsonCart));
-  }
+  // CartInMemoryRepository() {
+  //   cart = _parse(jsonDecode(jsonCart));
+  // }
 
   @override
   Future<Cart> get() async {

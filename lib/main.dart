@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hulk_store/dependencies_provider.dart' as di;
 import 'package:hulk_store/domain/controller/file_controller.dart';
-import 'package:hulk_store/presentation/home.dart';
+import 'package:hulk_store/presentation/home/home.dart';
+import 'package:hulk_store/presentation/home/home_admin.dart';
 import 'package:hulk_store/presentation/login/login.dart';
+import 'package:hulk_store/presentation/login/login_admin.dart';
 import 'package:hulk_store/presentation/login/login_success.dart';
+import 'package:hulk_store/presentation/products/add_products.dart';
 import 'package:hulk_store/presentation/register/register.dart';
 import 'package:provider/provider.dart';
 
@@ -46,6 +49,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         SignInScreen.routeName: (context) => SignInScreen(),
+        SignInScreenAdmin.routeName: (context) => SignInScreenAdmin(),
 
         LoginTypeScreen.routeName: (context) => LoginTypeScreen(),
         // ForgotPasswordScreen.routeName: (context) => ForgotPasswordScreen(),
@@ -53,6 +57,8 @@ class MyApp extends StatelessWidget {
         // CompleteProfileScreen.routeName: (context) => CompleteProfileScreen(),
         // OtpScreen.routeName: (context) => OtpScreen(),
         HomeScreen.routeName: (context) => HomeScreen(),
+        HomeScreenAdmin.routeName: (context) => HomeScreenAdmin(),
+        AddProductsAdmin.routeName: (context) => AddProductsAdmin(),
         // DetailsScreen.routeName: (context) => DetailsScreen(),
         // CartScreen.routeName: (context) => CartScreen(),
         RegisterScreen.routeName: (context) => RegisterScreen(),
