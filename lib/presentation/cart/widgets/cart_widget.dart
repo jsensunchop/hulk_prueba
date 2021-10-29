@@ -49,15 +49,6 @@ class CartWidget extends StatelessWidget {
           Expanded(
               child: CartForm(_cartState, _editQuantityOfCartItemCallback,
                   _removeItemFromCartCallback)),
-          SizedBox(
-            width:  MediaQuery.of(context).size.width *0.4,
-            child: Column(
-              children: [
-                Text(_cartState.items[0].quantity.toString()),
-                // const BuyButton(),
-              ],
-            ),
-          ),
         ],
       ),
     );

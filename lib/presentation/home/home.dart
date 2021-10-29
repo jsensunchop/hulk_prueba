@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(12, 117, 16, 1),
+      backgroundColor: Color.fromRGBO(121, 178, 123, 1),
       appBar: HomeHeader(_cartState.totalItems),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

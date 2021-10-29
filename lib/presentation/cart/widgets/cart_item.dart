@@ -28,48 +28,22 @@ class CartContentItem extends StatelessWidget {
 
 
   Future<void> readJson() async {
-
-    // final String response = await rootBundle.loadString('assets/sample.json');
-    // await sharedPref.save("user", response);
-    // print(sharedPref);
-    print(products_data);
-
     data = await json.decode(products_data);
-    print(data);
-    print("--------");
-
-      _items = data;
-
-    print(_items);
-    print("---/////////////////////////////-----");
+    _items = data;
     id = int.parse(_cartItemState.id.toString())-1;
-    print(id);
-    print("---/////////////////////////////-----");
-
     changeStock(id, int.parse(_quantityController.text));
-
   }
 
 
   Future<void> changeStock(int index, int stock) async{
-    // final String response = await rootBundle.loadString('assets/sample.json');
-    // final data = await json.decode(response);
-    // final data = await json.decode(products_data);
     print(_items[index]["stock"]);
     if(_items[index]["stock"] >= int.parse(_quantityController.text)){
-      print("/////");
-      // _removeItemFromCartCallback(_cartItemState);
-      print(_items[index]["stock"] = _items[index]["stock"] - stock);
-
+      _removeItemFromCartCallback(_cartItemState);
       data1 = await json.encode(_items);
       products_data = data1;
-      _removeItemFromCartCallback(_cartItemState);
-
     } else{
       print("no se puede men");
     }
-
-    // data = await json.encode(value)
   }
 
   @override
@@ -111,12 +85,10 @@ class CartContentItem extends StatelessWidget {
                     children: [
                       const Text(
                           "Quantity: ",
-                          // decoration: const InputDecoration(labelText: 'Quantity'),
                       ),
                       Text(
                         _quantityController.text,
                         style: const TextStyle(color: kPrimaryColor, fontWeight: FontWeight.bold),
-                        // decoration: const InputDecoration(labelText: 'Quantity'),
                       ),
                     ],
                   ),
@@ -136,8 +108,6 @@ class CartContentItem extends StatelessWidget {
           press: () async{
             readJson();
             Navigator.pushNamed(context, CartFinished.routeName);
-            // print(_items[id]["stock"]);
-            // Navigator.pushNamed(context, SignInScreenAdmin.routeName);
           },
         ),
       )
@@ -165,24 +135,3 @@ class CartContentItem extends StatelessWidget {
         ));
   }
 }
-
-// class BuyButton extends StatefulWidget {
-//   final cartItemStateId;
-//   const BuyButton( this.cartItemStateId, {Key key}) : super(key: key);
-//
-//   @override
-//   _BuyButtonState createState() => _BuyButtonState();
-// }
-//
-// class _BuyButtonState extends State<BuyButton> {
-//
-//
-//
-//
-//   @override
-//   Widget build(BuildContext context) {
-//
-//
-//     return
-//   }
-// }
