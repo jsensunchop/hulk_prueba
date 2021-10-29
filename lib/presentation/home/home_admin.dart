@@ -93,7 +93,7 @@ class _HomeScreenAdminState extends State<HomeScreenAdmin> {
 
   @override
   Widget build(BuildContext context) {
-    // readJson();
+    readJson();
     final _product = ModalRoute.of(context).settings.arguments as ProductArguments;
     return Scaffold(
 
