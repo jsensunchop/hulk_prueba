@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hulk_store/data/products/products_data.dart';
 import 'package:hulk_store/presentation/cart/cart_state.dart';
+import 'package:hulk_store/presentation/cart/widgets/cart_finished.dart';
 import 'package:hulk_store/presentation/widgets/button.dart';
 import 'package:hulk_store/style.dart';
 
@@ -43,9 +44,10 @@ class CartContentItem extends StatelessWidget {
     print("---/////////////////////////////-----");
     id = int.parse(_cartItemState.id.toString())-1;
     print(id);
-    print(_items[id]["stock"].toString());
-    print(_items[id]["id"].toString());
-    print(_items[id]["stock"].toString());
+    print("---/////////////////////////////-----");
+
+    changeStock(id, int.parse(_quantityController.text));
+
   }
 
 
@@ -53,9 +55,20 @@ class CartContentItem extends StatelessWidget {
     // final String response = await rootBundle.loadString('assets/sample.json');
     // final data = await json.decode(response);
     // final data = await json.decode(products_data);
-    _items[index]["stock"] = _items[index]["stock"] - stock;
-    data1 = await json.encode(_items);
-    products_data = data1;
+    print(_items[index]["stock"]);
+    if(_items[index]["stock"] >= int.parse(_quantityController.text)){
+      print("/////");
+      // _removeItemFromCartCallback(_cartItemState);
+      print(_items[index]["stock"] = _items[index]["stock"] - stock);
+
+      data1 = await json.encode(_items);
+      products_data = data1;
+      _removeItemFromCartCallback(_cartItemState);
+
+    } else{
+      print("no se puede men");
+    }
+
     // data = await json.encode(value)
   }
 
@@ -122,11 +135,8 @@ class CartContentItem extends StatelessWidget {
           text: "Buy",
           press: () async{
             readJson();
-
-            print(int.parse(_cartItemState.id.toString()));
-            // print(_items[7]["stock"].toString());
-
-
+            Navigator.pushNamed(context, CartFinished.routeName);
+            // print(_items[id]["stock"]);
             // Navigator.pushNamed(context, SignInScreenAdmin.routeName);
           },
         ),

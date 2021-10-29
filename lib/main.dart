@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hulk_store/dependencies_provider.dart' as di;
 import 'package:hulk_store/domain/controller/file_controller.dart';
+import 'package:hulk_store/presentation/cart/widgets/cart_finished.dart';
 import 'package:hulk_store/presentation/home/home.dart';
 import 'package:hulk_store/presentation/home/home_admin.dart';
 import 'package:hulk_store/presentation/login/login.dart';
@@ -59,6 +60,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.routeName: (context) => HomeScreen(),
         HomeScreenAdmin.routeName: (context) => HomeScreenAdmin(),
         AddProductsAdmin.routeName: (context) => AddProductsAdmin(),
+        CartFinished.routeName: (context) => CartFinished(),
         // DetailsScreen.routeName: (context) => DetailsScreen(),
         // CartScreen.routeName: (context) => CartScreen(),
         RegisterScreen.routeName: (context) => RegisterScreen(),
