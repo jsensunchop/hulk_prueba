@@ -15,7 +15,7 @@ class ProductsPresenter {
   }
 
   ProductsState _mapToState(String searchTerm, List<Product> products) {
-    final formatCurrency = NumberFormat.simpleCurrency(locale: 'es-ES');
+    final formatCurrency = NumberFormat.simpleCurrency(locale: 'en-US');
 
     return ProductsState(
         searchTerm,
